@@ -22,9 +22,11 @@ builder.Services.AddSwaggerGen(options =>
         }
     });
 
-    var filePath = Path.Combine(AppContext.BaseDirectory, "MyWorkout.xml");
+    var filePath = Path.Combine(AppContext.BaseDirectory, "MyWorkout.Api.xml");
     options.IncludeXmlComments(filePath);
 });
+
+builder.Services.AddHealthChecks();
 
 var app = builder.Build();
 
@@ -36,6 +38,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseHealthChecks("/api/hc");
 
 app.UseAuthorization();
 
