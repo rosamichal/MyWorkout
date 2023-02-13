@@ -26,6 +26,14 @@ builder.Services.AddSwaggerGen(options =>
     options.IncludeXmlComments(filePath);
 });
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.WithOrigins("https://myworkout-react");
+    });
+});
+
 builder.Services.AddHealthChecks();
 
 var app = builder.Build();
@@ -40,6 +48,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseHealthChecks("/api/hc");
+
+app.UseCors();
 
 app.UseAuthorization();
 
