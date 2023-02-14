@@ -6,7 +6,7 @@ namespace MyWorkout.Domain.Entities
     {
         public WorkoutPlan WorkoutPlan { get; set; }
         public DateTime Date { get; set; }
-        public ICollection<Exercise> Exercises { get; set; }
+        public List<Exercise> Exercises { get; private set; } = new List<Exercise>();
         public string Note { get; set; }
     }
 }
