@@ -1,4 +1,11 @@
+using Microsoft.Extensions.Configuration;
 using Microsoft.OpenApi.Models;
+
+using MyWorkout.Application;
+using MyWorkout.Infrastructure;
+using MyWorkout.Persistance;
+
+using System.Configuration;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -33,6 +40,10 @@ builder.Services.AddCors(options =>
         builder.WithOrigins("https://myworkout-react");
     });
 });
+
+builder.Services.AddApplication(builder.Configuration);
+builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddPersistance(builder.Configuration);
 
 builder.Services.AddHealthChecks();
 
