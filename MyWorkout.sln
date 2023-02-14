@@ -24,6 +24,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWorkout.Persistance", "src\MyWorkout.Persistance\MyWorkout.Persistance.csproj", "{FE4269EE-85D5-4D9E-B50C-CE371593EEA1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +48,10 @@ Global
 		{742C1D9B-D023-4375-A17F-FCFAF362E0A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{742C1D9B-D023-4375-A17F-FCFAF362E0A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{742C1D9B-D023-4375-A17F-FCFAF362E0A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE4269EE-85D5-4D9E-B50C-CE371593EEA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE4269EE-85D5-4D9E-B50C-CE371593EEA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE4269EE-85D5-4D9E-B50C-CE371593EEA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE4269EE-85D5-4D9E-B50C-CE371593EEA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,6 +64,7 @@ Global
 		{6EF7D6FB-BCCC-4305-9005-8239CAF0C9D1} = {FBCDD5A3-B712-4C65-8183-B50A8820C3C6}
 		{ABE4FC37-74A0-4DDA-9026-4F069A53CE41} = {FBCDD5A3-B712-4C65-8183-B50A8820C3C6}
 		{53D8D40A-9D10-4D66-8CC6-F9AB48C3DD37} = {FBCDD5A3-B712-4C65-8183-B50A8820C3C6}
+		{FE4269EE-85D5-4D9E-B50C-CE371593EEA1} = {ABE4FC37-74A0-4DDA-9026-4F069A53CE41}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {556D7726-664C-4B40-8D3A-925D0BE4FA53}

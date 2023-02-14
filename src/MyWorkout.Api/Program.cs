@@ -1,4 +1,11 @@
+using Microsoft.Extensions.Configuration;
 using Microsoft.OpenApi.Models;
+
+using MyWorkout.Application;
+using MyWorkout.Infrastructure;
+using MyWorkout.Persistance;
+
+using System.Configuration;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,6 +33,18 @@ builder.Services.AddSwaggerGen(options =>
     options.IncludeXmlComments(filePath);
 });
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.WithOrigins("https://myworkout-react");
+    });
+});
+
+builder.Services.AddApplication(builder.Configuration);
+builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddPersistance(builder.Configuration);
+
 builder.Services.AddHealthChecks();
 
 var app = builder.Build();
@@ -40,6 +59,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseHealthChecks("/api/hc");
+
+app.UseCors();
 
 app.UseAuthorization();
 
