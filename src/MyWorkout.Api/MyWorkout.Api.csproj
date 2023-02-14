@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MyWorkout.Application\MyWorkout.Application.csproj" />
+    <ProjectReference Include="..\MyWorkout.Infrastructure\MyWorkout.Infrastructure.csproj" />
     <ProjectReference Include="..\MyWorkout.Persistance\MyWorkout.Persistance.csproj" />
   </ItemGroup>
 
