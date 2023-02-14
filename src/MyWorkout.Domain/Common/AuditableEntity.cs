@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyWorkout.Domain.Common
 {
-    internal class AuditableEntity
+    public class AuditableEntity
     {
         public int Id { get; set; }
         public string CreatedBy { get; set; }
