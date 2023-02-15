@@ -3,6 +3,8 @@
 using MyWorkout.Domain.Common;
 using MyWorkout.Domain.Entities;
 
+using System.Reflection;
+
 namespace MyWorkout.Persistance
 {
     internal class MyWorkoutDbContext : DbContext
@@ -20,6 +22,8 @@ namespace MyWorkout.Persistance
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
             modelBuilder.SeedData();
         }
 
