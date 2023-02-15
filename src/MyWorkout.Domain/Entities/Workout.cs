@@ -2,7 +2,7 @@
 
 namespace MyWorkout.Domain.Entities
 {
-    internal class Workout : AuditableEntity
+    public class Workout : AuditableEntity
     {
         public WorkoutPlan WorkoutPlan { get; set; }
         public DateTime Date { get; set; }

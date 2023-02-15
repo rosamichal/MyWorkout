@@ -2,7 +2,7 @@
 
 namespace MyWorkout.Domain.Entities
 {
-    internal class Exercise : AuditableEntity
+    public class Exercise : AuditableEntity
     {
         public string Name { get; set; }
         public string Description { get; set; }

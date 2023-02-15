@@ -1,12 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
 using MyWorkout.Domain.Common;
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MyWorkout.Domain.Entities;
 
 namespace MyWorkout.Persistance
 {
@@ -16,6 +11,12 @@ namespace MyWorkout.Persistance
         {
 
         }
+
+        public DbSet<Exercise> Exercises { get; set; }
+        public DbSet<ExerciseType> ExerciseTypes { get; set; }
+        public DbSet<Workout> Workouts { get; set; }
+        public DbSet<WorkoutPlan> WorkoutPlans { get; set; }
+        public DbSet<WorkoutSchedule> WorkoutSchedules { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
