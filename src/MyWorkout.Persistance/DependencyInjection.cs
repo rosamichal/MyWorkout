@@ -13,8 +13,8 @@ namespace MyWorkout.Persistance
     {
         public static IServiceCollection AddPersistance(this IServiceCollection services, IConfiguration configuration)
         {
-            //services.AddDbContext<TasksLogDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("TasksLogConnectionString")));
-            //services.AddScoped<ITasksLogDbContext, TasksLogDbContext>();
+            services.AddDbContext<TasksLogDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("TasksLogConnectionString")));
+            services.AddScoped<ITasksLogDbContext, TasksLogDbContext>();
 
             return services;
         }
