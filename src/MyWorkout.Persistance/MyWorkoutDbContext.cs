@@ -18,6 +18,11 @@ namespace MyWorkout.Persistance
         public DbSet<WorkoutPlan> WorkoutPlans { get; set; }
         public DbSet<WorkoutSchedule> WorkoutSchedules { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.SeedData();
+        }
+
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             foreach (var entry in ChangeTracker.Entries<AuditableEntity>())
