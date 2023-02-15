@@ -1,6 +1,9 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
+using MyWorkout.Application.Common.Interfaces;
+using MyWorkout.Infrastructure.Services;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +16,7 @@ namespace MyWorkout.Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
-
+            services.AddTransient<IDateTime, DateTimeService>();
             return services;
         }
     }
