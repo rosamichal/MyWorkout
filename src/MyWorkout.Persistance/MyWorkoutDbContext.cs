@@ -8,7 +8,7 @@ using System.Reflection;
 
 namespace MyWorkout.Persistance
 {
-    internal class MyWorkoutDbContext : DbContext
+    internal class MyWorkoutDbContext : DbContext, IMyWorkoutDbContext
     {
         private readonly IDateTime _dateTime;
 
