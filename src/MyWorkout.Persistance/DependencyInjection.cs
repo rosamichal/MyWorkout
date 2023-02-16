@@ -1,5 +1,8 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+
+using MyWorkout.Application.Common.Interfaces;
 
 using System;
 using System.Collections.Generic;
@@ -13,8 +16,8 @@ namespace MyWorkout.Persistance
     {
         public static IServiceCollection AddPersistance(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<TasksLogDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("TasksLogConnectionString")));
-            services.AddScoped<ITasksLogDbContext, TasksLogDbContext>();
+            services.AddDbContext<MyWorkoutDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("MyWorkoutConnectionString")));
+            services.AddScoped<IMyWorkoutDbContext, MyWorkoutDbContext>();
 
             return services;
         }
