@@ -18,8 +18,4 @@
     <ProjectReference Include="..\MyWorkout.Persistance\MyWorkout.Persistance.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>
