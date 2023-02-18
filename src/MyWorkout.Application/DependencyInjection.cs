@@ -14,7 +14,8 @@ namespace MyWorkout.Application
     {
         public static IServiceCollection AddApplication(this IServiceCollection services, IConfiguration configuration)
         {
-            //services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+
             //services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             //services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
