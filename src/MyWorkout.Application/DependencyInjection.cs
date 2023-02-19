@@ -1,4 +1,6 @@
-﻿using MediatR;
+﻿using FluentValidation;
+
+using MediatR;
 
 using Microsoft.Extensions.DependencyInjection;
 
@@ -16,10 +18,10 @@ namespace MyWorkout.Application
 
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
-            //services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>));
-            //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
 
             return services;
         }
