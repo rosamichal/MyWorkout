@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 
 using Microsoft.EntityFrameworkCore;
 
@@ -20,17 +21,20 @@ namespace MyWorkout.Application.Features.Exercises.Queries.GetAllExercises
     public class GetAllExercisesQueryHandler : IRequestHandler<GetAllExercisesQuery, List<ExerciseListItemViewModel>>
     {
         private readonly IMyWorkoutDbContext _dbContext;
+        private readonly IMapper _mapper;
 
-        public GetAllExercisesQueryHandler(IMyWorkoutDbContext dbContext)
+        public GetAllExercisesQueryHandler(IMyWorkoutDbContext dbContext, IMapper mapper)
         {
             this._dbContext = dbContext;
+            this._mapper = mapper;
         }
         public async Task<List<ExerciseListItemViewModel>> Handle(GetAllExercisesQuery request, CancellationToken cancellationToken)
         {
-            return await _dbContext.Exercises
+            var exercises = await _dbContext.Exercises
                 .Where(e => !e.IsDeleted)
-                .Select(e => new ExerciseListItemViewModel { ExerciseId = e.Id, Name = e.Name})
                 .ToListAsync();
+
+            return _mapper.Map<List<ExerciseListItemViewModel>>(exercises);
         }
     }
 }
