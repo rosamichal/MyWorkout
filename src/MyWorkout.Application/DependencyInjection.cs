@@ -1,5 +1,8 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using MediatR;
+
 using Microsoft.Extensions.DependencyInjection;
+
+using MyWorkout.Application.Common.Behaviours;
 
 using System.Reflection;
 
@@ -15,7 +18,7 @@ namespace MyWorkout.Application
 
             //services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
-            //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>));
             //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
 
             return services;
