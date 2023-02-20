@@ -11,7 +11,6 @@ namespace MyWorkout.Persistance.Configurations
         {
             builder.Property(p => p.Name).IsRequired().HasMaxLength(200);
             builder.Property(p => p.Description).HasMaxLength(1000);
-            builder.HasMany<Exercise>(p => p.Exercises).WithMany(); //to verified if it works
         }
     }
 }
