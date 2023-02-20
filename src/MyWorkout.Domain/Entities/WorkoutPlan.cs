@@ -6,7 +6,8 @@ namespace MyWorkout.Domain.Entities
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public List<Exercise> Exercises { get; private set; } = new List<Exercise>();
-
+        public List<WorkoutPlanExercise> Exercises { get; private set; } = new List<WorkoutPlanExercise>();
+        public int ScheduleId { get; set; }
+        public WorkoutSchedule Schedule { get; set; }
     }
 }
