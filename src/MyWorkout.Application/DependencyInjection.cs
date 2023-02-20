@@ -1,27 +1,27 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using FluentValidation;
+
+using MediatR;
+
 using Microsoft.Extensions.DependencyInjection;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using MyWorkout.Application.Common.Behaviours;
+
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyWorkout.Application
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddApplication(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddApplication(this IServiceCollection services)
         {
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 
-            //services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
-            //services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
-            //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>));
-            //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
 
             return services;
         }
