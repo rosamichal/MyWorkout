@@ -14,6 +14,7 @@ namespace MyWorkout.Api.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<ApiResponse<List<ExerciseListItemViewModel>>>> GetAll()
         {
             var result = await Mediator.Send(new GetAllExercisesQuery());
