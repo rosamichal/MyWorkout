@@ -12,7 +12,7 @@ Log.Logger = new LoggerConfiguration()
 
 try
 {
-    Log.Information("Starting web application");
+    Log.Information("Starting MyWorkout API");
     var builder = WebApplication.CreateBuilder(args);
 
     builder.Host.UseSerilog((ctx, lc)
