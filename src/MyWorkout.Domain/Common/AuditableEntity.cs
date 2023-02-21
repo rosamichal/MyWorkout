@@ -5,10 +5,10 @@
         public int Id { get; set; }
         public string CreatedBy { get; set; }
         public DateTime Created { get; set; }
-        public string ModifiedBy { get; set; }
+        public string? ModifiedBy { get; set; }
         public DateTime? Modified { get; set; }
-        public bool IsDeleted { get; set; }
-        public string DeletedBy { get; set; }
+        public bool IsDeleted { get; set; } = false;
+        public string? DeletedBy { get; set; }
         public DateTime? Deleted { get; set; }
     }
 }
