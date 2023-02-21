@@ -4,7 +4,7 @@ namespace MyWorkout.Domain.Entities
 {
     public class WorkoutTrainingSeries : AuditableEntity
     {
-        public string Name { get; set; }
+        public string? Name { get; set; }
         public int RestTimeBetweenExercisesInSecond { get; set; }
         public int RestTimeBetweenSeriesInSecond { get; set; }
         public int WorkoutId { get; set; }

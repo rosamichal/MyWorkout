@@ -34,12 +34,12 @@ namespace MyWorkout.Persistance
                     new Exercise { Id = 4, Created = seedDate, CreatedBy = "Michał", IsDeleted = false, Name = "Podciąganie nachwytem", TypeId = 1 },
                     new Exercise { Id = 5, Created = seedDate, CreatedBy = "Michał", IsDeleted = false, Name = "Podciąganie podchwytem", TypeId = 1 },
                     new Exercise { Id = 6, Created = seedDate, CreatedBy = "Michał", IsDeleted = false, Name = "Podciąganie australijskie", TypeId = 1 },
-                    new Exercise { Id = 1, Created = seedDate, CreatedBy = "Michał", IsDeleted = false, Name = "Przysiady klasyczne", TypeId = 3 },
-                    new Exercise { Id = 2, Created = seedDate, CreatedBy = "Michał", IsDeleted = false, Name = "Przysiady na jednej nodze", TypeId = 3 },
-                    new Exercise { Id = 3, Created = seedDate, CreatedBy = "Michał", IsDeleted = false, Name = "Przysiady bułgarskie", TypeId = 3 },
-                    new Exercise { Id = 4, Created = seedDate, CreatedBy = "Michał", IsDeleted = false, Name = "Martwy ciąg", TypeId = 8 },
-                    new Exercise { Id = 5, Created = seedDate, CreatedBy = "Michał", IsDeleted = false, Name = "Deska na przedramionach", TypeId = 7 },
-                    new Exercise { Id = 6, Created = seedDate, CreatedBy = "Michał", IsDeleted = false, Name = "Burpees", TypeId = 9 }
+                    new Exercise { Id = 7, Created = seedDate, CreatedBy = "Michał", IsDeleted = false, Name = "Przysiady klasyczne", TypeId = 3 },
+                    new Exercise { Id = 8, Created = seedDate, CreatedBy = "Michał", IsDeleted = false, Name = "Przysiady na jednej nodze", TypeId = 3 },
+                    new Exercise { Id = 9, Created = seedDate, CreatedBy = "Michał", IsDeleted = false, Name = "Przysiady bułgarskie", TypeId = 3 },
+                    new Exercise { Id = 10, Created = seedDate, CreatedBy = "Michał", IsDeleted = false, Name = "Martwy ciąg", TypeId = 8 },
+                    new Exercise { Id = 11, Created = seedDate, CreatedBy = "Michał", IsDeleted = false, Name = "Deska na przedramionach", TypeId = 7 },
+                    new Exercise { Id = 12, Created = seedDate, CreatedBy = "Michał", IsDeleted = false, Name = "Burpees", TypeId = 9 }
                     );
             });
 
