@@ -4,7 +4,7 @@ using MyWorkout.Application.Features.WorkoutPlans.Commands.CreateWorkoutPlan;
 using MyWorkout.Application.Features.WorkoutPlans.Commands.DeleteWorkoutPlan;
 using MyWorkout.Application.Features.WorkoutPlans.Commands.UpdateWorkoutPlan;
 using MyWorkout.Application.Features.WorkoutPlans.Queries.GetAllWorkoutPlans;
-using MyWorkout.Application.Features.WorkoutPlans.Queries.GetWorkoutDetail;
+using MyWorkout.Application.Features.WorkoutPlans.Queries.GetWorkoutPlanDetail;
 
 namespace MyWorkout.Api.Controllers
 {
