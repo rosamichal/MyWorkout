@@ -20,8 +20,12 @@ namespace MyWorkout.Persistance
         public DbSet<Exercise> Exercises { get; set; }
         public DbSet<ExerciseType> ExerciseTypes { get; set; }
         public DbSet<Workout> Workouts { get; set; }
-        public DbSet<WorkoutPlan> WorkoutPlans { get; set; }
+        public DbSet<WorkoutExercise> WorkoutExercises { get; set; }
         public DbSet<WorkoutSchedule> WorkoutSchedules { get; set; }
+        public DbSet<WorkoutTrainingSeries> WorkoutTrainingSeries { get; set; }
+        public DbSet<WorkoutPlan> WorkoutPlans { get; set; }
+        public DbSet<WorkoutPlanExercise> WorkoutPlanExercises { get; set; }
+        public DbSet<WorkoutPlanTrainingSeries> WorkoutPlanTrainingSeries { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

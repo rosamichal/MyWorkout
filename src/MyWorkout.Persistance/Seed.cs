@@ -53,13 +53,22 @@ namespace MyWorkout.Persistance
                 t.HasData(new WorkoutPlan { Id = 1, Created = seedDate, CreatedBy = "Michał", IsDeleted = false, Name = "Mój plan", Description = "Mój pierwszy plan treningoey oparty na ćwiczeniach wielostawowych", ScheduleId = 1});
             });
 
+            modelBuilder.Entity<WorkoutPlanTrainingSeries>(t => 
+            {
+                t.HasData(
+                    new WorkoutPlanTrainingSeries { Id = 1, Created = seedDate, CreatedBy = "Michał", IsDeleted = false, Name = "Rozgrzewka", RestTimeBetweenSeriesInSecond = 30, WorkoutPlanId = 1 },
+                    new WorkoutPlanTrainingSeries { Id = 2, Created = seedDate, CreatedBy = "Michał", IsDeleted = false, Name = "Superseria", RestTimeBetweenSeriesInSecond = 180, WorkoutPlanId = 1 },
+                    new WorkoutPlanTrainingSeries { Id = 3, Created = seedDate, CreatedBy = "Michał", IsDeleted = false, Name = "Dobitka", RestTimeBetweenSeriesInSecond = 180, WorkoutPlanId = 1 }
+                    );
+            });
+
             modelBuilder.Entity<WorkoutPlanExercise>(t =>
             {
                 t.HasData(
-                    new WorkoutPlanExercise { Id = 1, Created = seedDate, CreatedBy = "Michał", IsDeleted = false, Name = "Burpees", TypeId = 9, IsTimeExercise = true, TimeInSecond = 60, WorkoutPlanId = 1 },
-                    new WorkoutPlanExercise { Id = 2, Created = seedDate, CreatedBy = "Michał", IsDeleted = false, Name = "Pompki klasyczne", TypeId = 2, IsTimeExercise = false, NumberOfRepetitions = 10, WorkoutPlanId = 1 },
-                    new WorkoutPlanExercise { Id = 3, Created = seedDate, CreatedBy = "Michał", IsDeleted = false, Name = "Podciąganie nachwytem", TypeId = 1, IsTimeExercise = false, NumberOfRepetitions = 8, WorkoutPlanId = 1 },
-                    new WorkoutPlanExercise { Id = 4, Created = seedDate, CreatedBy = "Michał", IsDeleted = false, Name = "Martwy ciąg", TypeId = 8, IsTimeExercise = false, NumberOfRepetitions = 10, WeightInKilograms = 70, WorkoutPlanId = 1 }
+                    new WorkoutPlanExercise { Id = 1, Created = seedDate, CreatedBy = "Michał", IsDeleted = false, Name = "Burpees", TypeId = 9, IsTimeExercise = true, TimeInSecond = 60, WorkoutPlanTrainingSeriesId = 1 },
+                    new WorkoutPlanExercise { Id = 2, Created = seedDate, CreatedBy = "Michał", IsDeleted = false, Name = "Pompki klasyczne", TypeId = 2, IsTimeExercise = false, NumberOfRepetitions = 10, WorkoutPlanTrainingSeriesId = 2 },
+                    new WorkoutPlanExercise { Id = 3, Created = seedDate, CreatedBy = "Michał", IsDeleted = false, Name = "Podciąganie nachwytem", TypeId = 1, IsTimeExercise = false, NumberOfRepetitions = 8, WorkoutPlanTrainingSeriesId = 2 },
+                    new WorkoutPlanExercise { Id = 4, Created = seedDate, CreatedBy = "Michał", IsDeleted = false, Name = "Martwy ciąg", TypeId = 8, IsTimeExercise = false, NumberOfRepetitions = 10, WeightInKilograms = 70, WorkoutPlanTrainingSeriesId = 3 }
                     );
             });
         }
