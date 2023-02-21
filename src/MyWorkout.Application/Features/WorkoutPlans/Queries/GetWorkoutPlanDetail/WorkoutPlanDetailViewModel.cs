@@ -1,4 +1,6 @@
-﻿using MyWorkout.Application.Common.Mappings;
+﻿using AutoMapper;
+
+using MyWorkout.Application.Common.Mappings;
 using MyWorkout.Application.Features.WorkoutPlans.Queries.GetWorkoutPlanDetail.Dtos;
 using MyWorkout.Domain.Entities;
 
@@ -11,5 +13,10 @@ namespace MyWorkout.Application.Features.WorkoutPlans.Queries.GetWorkoutPlanDeta
         public string? Description { get; set; }
         public WorkoutScheduleDto Schedule { get; set; }
         public List<WorkoutPlanTrainingSeriesDto> Series { get; private set; } = new List<WorkoutPlanTrainingSeriesDto>();
+
+        public void Mapping(Profile profile)
+        {
+            profile.CreateMap<WorkoutPlan, WorkoutPlanDetailViewModel>();
+        }
     }
 }
