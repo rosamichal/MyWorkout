@@ -3,7 +3,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using MyWorkout.Application.Common.Interfaces;
 
-namespace MyWorkout.Application.Features.WorkoutPlans.Queries.GetWorkoutDetail
+namespace MyWorkout.Application.Features.WorkoutPlans.Queries.GetWorkoutPlanDetail
 {
     public class GetWorkoutPlanDetailQuery : IRequest<WorkoutPlanDetailViewModel>
     {
@@ -23,6 +23,8 @@ namespace MyWorkout.Application.Features.WorkoutPlans.Queries.GetWorkoutDetail
         public async Task<WorkoutPlanDetailViewModel> Handle(GetWorkoutPlanDetailQuery request, CancellationToken cancellationToken)
         {
             var workoutPlans = await _dbContext.WorkoutPlans
+                .Include(o => o.Schedule)
+                .Include(o => o.Series)
                 .Where(o => !o.IsDeleted && o.Id == request.WorkoutPlanId)
                 .FirstOrDefaultAsync();
 
