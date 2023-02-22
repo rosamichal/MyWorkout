@@ -6,7 +6,7 @@ namespace MyWorkout.Application.Features.WorkoutPlans.Commands.UpdateWorkoutPlan
 {
     public class UpdateWorkoutPlanCommand : IRequest
     {
-        public int WorkoutPlnId { get; set; }
+        public int WorkoutPlanId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
     }
@@ -22,7 +22,7 @@ namespace MyWorkout.Application.Features.WorkoutPlans.Commands.UpdateWorkoutPlan
 
         public async Task Handle(UpdateWorkoutPlanCommand request, CancellationToken cancellationToken)
         {
-            var workoutPlan = await _dbContext.WorkoutPlans.FirstOrDefaultAsync(o => o.Id == request.WorkoutPlnId);
+            var workoutPlan = await _dbContext.WorkoutPlans.FirstOrDefaultAsync(o => o.Id == request.WorkoutPlanId);
 
             if (workoutPlan is not null)
             {

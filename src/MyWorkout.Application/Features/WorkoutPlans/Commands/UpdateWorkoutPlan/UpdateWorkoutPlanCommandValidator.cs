@@ -6,7 +6,7 @@ namespace MyWorkout.Application.Features.WorkoutPlans.Commands.UpdateWorkoutPlan
     {
         public UpdateWorkoutPlanCommandValidator()
         {
-            RuleFor(o => o.WorkoutPlnId).GreaterThan(0);
+            RuleFor(o => o.WorkoutPlanId).GreaterThan(0);
             RuleFor(o => o.Name).NotEmpty().MaximumLength(200);
             RuleFor(o => o.Description).NotEmpty().MaximumLength(1000);
         }
