@@ -7,7 +7,7 @@ namespace MyWorkout.Application.Features.WorkoutPlans.Commands.CreateWorkoutPlan
         public CreateWorkoutPlanValidator()
         {
             RuleFor(o => o.Name).NotEmpty().MaximumLength(200);
-            RuleFor(o => o.Description).NotEmpty().MaximumLength(1000);
+            RuleFor(o => o.Description).MaximumLength(1000);
         }
     }
 }
