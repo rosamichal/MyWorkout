@@ -34,7 +34,7 @@ namespace MyWorkout.Api.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(ApiResponse<object>))]
         public async Task<ActionResult<ApiResponse<WorkoutPlanDetailViewModel>>> GetWorkoutDetail(int id)
         {
-            var result = await Mediator.Send(new GetWorkoutPlanDetailQuery());
+            var result = await Mediator.Send(new GetWorkoutPlanDetailQuery(id));
 
             if (result is null)
             {
