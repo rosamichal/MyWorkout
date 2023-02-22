@@ -21,7 +21,7 @@ namespace MyWorkout.Api.Controllers
         {
             var result = await Mediator.Send(new GetAllWorkoutPlansQuery());
 
-            return Ok(result);
+            return Ok(ApiResponse<List<WorkoutPlanListItemViewModel>>.Success(result));
         }
 
         /// <summary>
@@ -38,10 +38,10 @@ namespace MyWorkout.Api.Controllers
 
             if (result is null)
             {
-                return NotFound();
+                return NotFound(ApiResponse<object>.Fail("Not Found Workout Plan"));
             }
 
-            return Ok(result);
+            return Ok(ApiResponse<WorkoutPlanDetailViewModel>.Success(result));
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace MyWorkout.Api.Controllers
         [ProducesResponseType(StatusCodes.Status409Conflict, Type = typeof(ApiResponse<object>))]
         public async Task<ActionResult> UpdateWorkoutPlan(int id, UpdateWorkoutPlanCommand command)
         {
-            if (id != command.WorkoutPlnId)
+            if (id != command.WorkoutPlanId)
             {
                 return Conflict(ApiResponse<object>.Fail("Conflict."));
             }
