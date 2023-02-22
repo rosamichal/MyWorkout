@@ -1,4 +1,6 @@
-﻿using MyWorkout.Application.Common.Mappings;
+﻿using AutoMapper;
+
+using MyWorkout.Application.Common.Mappings;
 using MyWorkout.Domain.Entities;
 
 namespace MyWorkout.Application.Features.WorkoutPlans.Queries.GetWorkoutPlanDetail.Dtos
@@ -9,5 +11,10 @@ namespace MyWorkout.Application.Features.WorkoutPlans.Queries.GetWorkoutPlanDeta
         public int RestTimeBetweenExercisesInSecond { get; set; }
         public int RestTimeBetweenSeriesInSecond { get; set; }
         public List<WorkoutPlanExerciseDto> Exercises { get; set; } = new List<WorkoutPlanExerciseDto>();
+
+        public void Mapping(Profile profile)
+        {
+            profile.CreateMap<WorkoutPlanTrainingSeries, WorkoutPlanTrainingSeriesDto>();
+        }
     }
 }

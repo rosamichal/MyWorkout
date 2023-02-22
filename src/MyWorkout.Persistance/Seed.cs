@@ -45,7 +45,7 @@ namespace MyWorkout.Persistance
 
             modelBuilder.Entity<WorkoutSchedule>(t =>
             {
-                t.HasData(new WorkoutSchedule { Id = 1, Created = seedDate, CreatedBy = "Michał", IsDeleted = false, IsPeriod = true, PeriodValue = 2});
+                t.HasData(new WorkoutSchedule { Id = 1, Created = seedDate, CreatedBy = "Michał", IsDeleted = false, IsPeriod = true, PeriodDays = 2});
             });
 
             modelBuilder.Entity<WorkoutPlan>(t =>

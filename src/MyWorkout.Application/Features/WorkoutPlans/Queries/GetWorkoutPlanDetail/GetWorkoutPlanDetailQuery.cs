@@ -7,6 +7,11 @@ namespace MyWorkout.Application.Features.WorkoutPlans.Queries.GetWorkoutPlanDeta
 {
     public class GetWorkoutPlanDetailQuery : IRequest<WorkoutPlanDetailViewModel>
     {
+        public GetWorkoutPlanDetailQuery(int workoutPlanId)
+        {
+            WorkoutPlanId = workoutPlanId;
+        }
+
         public int WorkoutPlanId { get; }
     }
 
@@ -25,6 +30,8 @@ namespace MyWorkout.Application.Features.WorkoutPlans.Queries.GetWorkoutPlanDeta
             var workoutPlans = await _dbContext.WorkoutPlans
                 .Include(o => o.Schedule)
                 .Include(o => o.Series)
+                .ThenInclude(o => o.Exercises)
+                .ThenInclude(o => o.Type)
                 .Where(o => !o.IsDeleted && o.Id == request.WorkoutPlanId)
                 .FirstOrDefaultAsync();
 

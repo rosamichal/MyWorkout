@@ -1,4 +1,6 @@
-﻿using MyWorkout.Application.Common.Mappings;
+﻿using AutoMapper;
+
+using MyWorkout.Application.Common.Mappings;
 using MyWorkout.Domain.Entities;
 
 namespace MyWorkout.Application.Features.WorkoutPlans.Queries.GetWorkoutPlanDetail.Dtos
@@ -6,7 +8,7 @@ namespace MyWorkout.Application.Features.WorkoutPlans.Queries.GetWorkoutPlanDeta
     public class WorkoutScheduleDto : IMapFrom<WorkoutSchedule>
     {
         public bool IsPeriod { get; set; }
-        public int? PeriodValue { get; set; }
+        public int? PeriodDays { get; set; }
         public bool? Monday { get; set; }
         public bool? Tuesday { get; set; }
         public bool? Wednesday { get; set; }
@@ -14,5 +16,10 @@ namespace MyWorkout.Application.Features.WorkoutPlans.Queries.GetWorkoutPlanDeta
         public bool? Friday { get; set; }
         public bool? Saturday { get; set; }
         public bool? Sunday { get; set; }
+
+        public void Mapping(Profile profile)
+        {
+            profile.CreateMap<WorkoutSchedule, WorkoutScheduleDto>().ReverseMap();
+        }
     }
 }
