@@ -1,5 +1,6 @@
 using Microsoft.OpenApi.Models;
 
+using MyWorkout.Api.Middleware;
 using MyWorkout.Application;
 using MyWorkout.Infrastructure;
 using MyWorkout.Persistance;
@@ -19,6 +20,8 @@ try
         => lc.ReadFrom.Configuration(ctx.Configuration));
 
     // Add services to the container.
+
+    builder.Services.AddScoped<ErrorHandlerMiddleware>();
 
     builder.Services.AddControllers();
     // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -63,6 +66,8 @@ try
         app.UseSwagger();
         app.UseSwaggerUI();
     }
+
+    app.UseMiddleware<ErrorHandlerMiddleware>();
 
     app.UseHttpsRedirection();
 
