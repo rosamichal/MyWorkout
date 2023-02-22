@@ -54,7 +54,7 @@ namespace MyWorkout.Api.Controllers
         public async Task<ActionResult> CreateWorkoutPlan(CreateWorkoutPlanCommand command)
         {
             var result = await Mediator.Send(command);
-            return Created($"api/workout-plans/{result}", result);
+            return Created($"api/workout-plans/{result.Data}", result);
         }
 
         /// <summary>
