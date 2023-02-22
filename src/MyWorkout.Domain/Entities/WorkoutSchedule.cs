@@ -5,7 +5,7 @@ namespace MyWorkout.Domain.Entities
     public class WorkoutSchedule : AuditableEntity
     {
         public bool IsPeriod { get; set; }
-        public int? PeriodDays { get; set; }
+        public int? RestDays { get; set; }
         public bool? Monday { get; set; }
         public bool? Tuesday { get; set; }
         public bool? Wednesday { get; set; }
